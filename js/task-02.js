@@ -8,13 +8,8 @@ const ingredients = [
 ];
 
 const list = document.querySelector('#ingredients');
-// console.log(list); 
-const li = document.createElement('li');
+const markUp = ingredients
+  .map((ingredient) => `<li class="item">${ingredient}</li>`)
+  .join('');
 
-ingredients.forEach(element => {
-  const li = document.createElement('li');
-  li.classList.add('item');
-  li.textContent = element;
-  list.append(li);
-  // console.log(li);
-});
+list.insertAdjacentHTML('afterbegin', markUp);
